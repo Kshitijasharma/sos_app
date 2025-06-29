@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Make sure the root fills the viewport */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Use a clean sans-serif font and softer text color */
+body {
+  @apply font-sans text-gray-800 bg-gray-50;
+  line-height: 1.6;
+}
+
+/* Remove default heading margins and make them bold */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply m-0 font-semibold;
+}
+
+/* Anchor styling */
+a {
+  @apply text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200;
+}
+
+/* Default button styling (you can override via Tailwind classes) */
+button {
+  @apply inline-flex items-center justify-center rounded font-medium px-4 py-2 transition-transform duration-200;
+}
+
+button:focus {
+  @apply outline-none ring-2 ring-blue-400 ring-offset-2;
+}
+
+/* Fade-in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
